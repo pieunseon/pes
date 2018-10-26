@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+*{
+     margin: 0; /*공백 없애기*/
+}
+.top-box{
+    height: 200px;
+    border: 1px solid black;
+    background-color: green;
+    position: fixed; /*상단만 고정*/
+    top: 0;
+    left: 0;
+    width: 100%   /*스크롤바 내려도 상단 상자는 고정됨. left:50px right:0 으로 대신 할 수 있음*/
+}
+
+
+.bottom-box{
+    border: 1px solid black;
+    height: 2000px;
+    background-color: grey;
+
+}
