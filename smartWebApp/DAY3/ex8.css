@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+input[type=text] {
+     color: red;
+
+}
+input[type=password] {
+    color: blue;
+
+}
+input[readonly] {
+    background-color: gray;
+
+}
+input:focus{
+    font-weight: bold;
+}
+input::placeholder{
+    color: green;
+
+}
+/*keyframes : 애니메이션을 등록*/
+@keyframes textcoloranimation {
+    /*시작 시  0%대신 from 사용가능 전체 시간을 기준으로 0% */
+    0% {color: blue;}
+    /*애니메이션 동작시간 전체시간을 기준으로 33%경과시*/
+    33% {color: green;}
+    66% {color: red;}
+    /*끝까지. 100% 대신 to사용가능
+    무한반복이고 자연스럽게 넘어가게 하기 위해서 0%일때와 100% 일때 색이 같게 해준다.*/
+    100% {color: green;}
+
+}
+
+span{
+    /*사용할 애니메이션 이름*/
+    animation-name :textcoloranimation;
+    /*애니메이션 1회 시간은 6초*/
+    animation-duration: 6s;
+    /*무한반복*/
+    animation-iteration-count: infinite;
+
+}

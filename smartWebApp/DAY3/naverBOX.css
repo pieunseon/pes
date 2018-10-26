@@ -1,0 +1,85 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box; /*보더라인 사이즈를 미리 정해둠으로써 
+                            박스안의 내용이 변하더라도 신경안써도됨*/
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+} 
+
+.container{
+    min-width: 1100px;
+}
+.nav-top{
+    /* height: 170px; */
+}
+.nav-bottom {
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    /*
+   border-top: 1px soild black;
+   border-bottom: 1px soild black;
+   */
+
+}
+.nav-top-inner{
+    margin: 0 auto;
+    height: 130px;
+    width: 1080px;
+    border-color: red;
+
+}
+.nav-bottom-inner{
+    margin: 0 auto;
+    height: 47px; /*띄어쓰기 주의*/
+    width: 1080px;
+    border-color: blue;
+}
+.bottom-inner{
+        width: 1100px;
+        margin: 0 auto;
+        padding: 8px 10px 0; /*순서: 상 우 하 좌(우랑 같음)*/
+        /* padding:8px 10px 0 10px;*/
+}
+.bottom-wrap{
+    font-size: 0;
+}
+.bottom-left, /* ,(콤마) bottom-left클래스와 bottom-right 클래스를 하나로 묶어주는 역할(동시에 적용*/
+.bottom-right{    
+     display: inline-block;
+
+}
+.bottom-left{
+    width:740px;
+}
+.bottom-right{
+    width:332px;
+    float: right; /*인라인 블록에서만 사용가능.블록이 100%에서는 사용 불가능.상자 오른쪽으로 붙이기*/
+}
+.bottom-left>div,
+.bottom-right>div{
+    margin-bottom: 8px;
+    border:solid 1px black;
+
+}
+.box1{
+    height: 120px;
+}
+.box2{
+    height:46px;
+}
+.box3{
+    height:246px;
+}
+.box4{
+    height:120px;
+}
+.box5{
+    height:142px;
+}
+.box6{
+    height:150px;
+}

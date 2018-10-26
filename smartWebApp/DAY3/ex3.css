@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+.box{
+    width: 80px; /*상자가로 길이*/
+    height: 80px; /*상자 높이*/
+    display: inline-block;
+    background-color: yellow; /*상자배경색*/
+    font-size: 30px;
+    text-align: center; /*상자 속 글씨 위치 가운대로*/
+    position: fixed;
+}
+/*#상자 이름*/
+
+#one{
+   left: 100px;
+}
+
+#two{
+    left: 0;
+    bottom: 0;
+}
+
+#three{
+     left: 150px;
+
+}  /*px크기에 따라 숫자 출력 순서 바뀜*/
+
+#top-box{
+    height: 200px;
+    border: 1px solid black;
+
+}
+#bottom-box{
+    border: 1px solid black;
+    height: 500px;
+   
+}

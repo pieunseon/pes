@@ -1,0 +1,45 @@
+@charset 'utf-8';
+.box{
+    width: 80px; /*상자가로 길이*/
+    height: 80px; /*상자 높이*/
+    display: inline-block;
+    background-color: yellow; /*상자배경색*/
+    font-size: 20px;
+    text-align: center; /*상자 속 글씨 위치 가운대로*/
+    position: absolute; /*기본 위,아래가 0 이기 때문에 상자 3개가 모두 겹쳐보임*/
+}
+
+#one{
+   top: 50px;
+   left: 100px;
+   z-index: 1;  /*상자 순서 설정.기본값은 0*/
+}
+
+#two{
+    top: 80px;
+    left: 150px;
+    background-color:red;
+    z-index: 2;
+}
+
+#three{
+    top: 110px;
+    left: 200px;
+    background-color:blue;
+    z-index: 3;
+}
+
+/* 다른 방법
+.box:nth-child(1){
+
+}
+.box:nth-child(2){
+     left :40px;
+     top: 40px;
+    
+}
+.box:nth-child(13){
+    left :80px;
+    top: 80px;
+      
+}  */

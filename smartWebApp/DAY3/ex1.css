@@ -1,0 +1,29 @@
+@charset 'uft-8';
+.box{
+    box-sizing: border-box; /*box-sizing 안하면 padding 의 크기에다 height의 크기가 더해진 
+                              박스가 생성이 됨. 따라서 높이가 120px이 되기 때문에 이를 막기위해 box-sizing을 이용*/
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: white;
+    background-color: red;
+    display: inline-block;
+    text-align: center;    /*상자안 글씨를 가운데로 조정*/
+    padding-top: 20px;
+
+}
+#h,
+#k{
+    position: relative;
+}
+#h:hover{
+    top: 20px;
+    left: 20px;   /*h 글씨에 마우스를 갔다대면 지정한 위치 만큼 움직임*/
+    background-color: green;
+}
+#k:hover{
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+
+}

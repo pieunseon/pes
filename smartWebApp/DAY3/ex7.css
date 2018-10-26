@@ -1,0 +1,54 @@
+@charset 'utf-8';
+
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,
+th{
+    border: 1px solid black;
+    text-align: center;
+}
+tbody>tr{ 
+    background-color: aliceblue;
+}
+tbody>tr:nth-child(even){  
+        /*nth-child(x) 짝수 줄, 홀수 줄 색 변경
+        x 가 even or 2n :짝수
+        x 가 odd : 홀수
+        x 가 2n-1 :홀수 */
+        /*
+        3줄씩 바꾸려면  nth-child(x)
+        x가 3n-2이면 1,4,7,10..
+        x가 3n-1이면 2,5,8,11..
+        x가 3n이면 3,6,9,12..
+        */
+    background-color: aqua;
+}
+tbody>tr:hover { /* = tbody tr:hover  같은 결과 출력*/
+    background-color: pink;
+    /* 셀렉터 관계
+    1. 부모 - 자식
+     부모셀렉터>자식셀렉터
+     tboby>tr
+    2. 조상 - 자손 
+      조상셀렉터 자손셀렉터
+      tbody tr
+    3.형제 
+    종류1 : 태그셀렉터클래스셀렉터
+    div.box
+    종류2 : 클래스셀렉터클랙스셀렉터
+    .container.font-12
+    종류3 : 태그아이디
+    div#top
+    종류4 : 아이디클래스
+    #top.container
+      */
+   /*
+    div>table>tr
+    div table>tr
+    div table#top
+    */
+}
