@@ -19,7 +19,6 @@
  border : solid 1px black ;
 }
 
-
 .left, 
 .right {
     display: inline-block; /* 가로 한 줄에 div태그를 여러개 놓기 위해. div태그는 기본이 block태그이기 때문.*/
@@ -49,7 +48,8 @@
     height: 102px; 
 }
 .left2, .right2, .mid2{
-    display: inline-block;
+	
+	  display: inline-block;
     width: calc(100% / 3);
     border: 1px solid red;
     height: 100px;
@@ -61,9 +61,9 @@
 
 }
 .right2{
-    right: 0;
+		right: 0;
+	
 }
-
 
 /*
 .box1-left,
