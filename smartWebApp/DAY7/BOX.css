@@ -1,0 +1,51 @@
+@charset 'utf-8';
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+.out-box{
+	height: 200px;
+	width: 100%;
+	border: 1px solid red;
+}
+
+.in-box{     
+	/* out box와 in box 사이에는 10px만큼 여백이 위, 아래, 좌, 우에 들어가기 때문에
+		 높이와 너비를 계산할때 여백의 크기 곱하기 2를 빼야한다. 
+		 곱하기 2를 하는 이유는 높이를 계산할때 위, 아래여백을 빼야하고 
+		 너비를 계산할때 좌, 우의 여백을 빼야하기 때문*/
+	height: calc(200px - 2 * 10px);      /*위아래 공백이 10px이기 때문: 10px x 2*/
+	width: calc(100% - 2 * 10px);
+	border: 1px solid black;
+
+}
+/* 1.padding 을 이용: 밖의 박스 기준으로*/
+.padding{  
+	padding: 10px;
+}
+.padding>.in-box{
+	width: 100%;
+}
+
+
+/*2.margin을 이용 : 안의 박스 기준으로*/
+.margin{
+ margin: 10px;
+}
+
+
+
+/*3.position 이용*/
+
+.out-box.relative{
+		position: relative;
+}
+.in-box.absolute{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
