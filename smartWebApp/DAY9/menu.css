@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul,li{
+	list-style: none;
+}
+
+li{
+	display: inline-block;
+	text-align: center;
+}
+.nav{
+		 height: 40px;
+		 background-color: beige;
+
+}
+.menu{
+	display: block;
+
+}
+.ham-menu{
+		display: none;
+		padding: 0 9px;
+}
+
+.menu li{
+	height: 40px;
+	line-height: 40px;
+}
+
+.ham-in{
+	 display: inline-block;
+	 width: 40px;
+	 height: 40px;
+	 line-height: 40px;
+	 font-size: 20px;
+	 cursor: pointer;
+	
+}
+.sub-menu{
+	display: none;
+	position: absolute;  /*상자 밀리지 않게 하기 위해서 */
+	top: 40px;
+	left: 0;
+	border: 1px solid black;
+	border-bottom: none;
+}
+.sub-menu li{
+	display: block;
+	border-bottom: 1px solid black;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;    
+}
+
+@media(max-width: 769px){
+    .ham-menu{
+			display: block;
+		}
+		.menu{
+			display: none;
+		}
+		.sub-menu{
+			display: block;
+		}
+}
