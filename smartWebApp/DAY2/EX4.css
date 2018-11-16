@@ -1,6 +1,6 @@
 @charset 'utf-8';
 *{
-    box-sizing: border-box;
+    box-sizing: border-box; 
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     margin: 0;
@@ -34,9 +34,10 @@ div{
 #bottom-left,
 #bottom-right {
     height: 400px;
-    width: calc((100% - 8px) / 2); /*띄어쓰기*/
-    display: inline-block;
+    width: calc((100% - 8px) / 2);  /*cal 사용시 연산자 앞뒤로 띄어쓰기*/
+    display: inline-block;  /*좌우로 나눌 수가 있음
+                            (단,박스 가로의 길이가 적절해야됨)*/
 }
 #bottom-right{
-  float: right;
+  float: right; /*오른쪽으로 붙이기*/
 }
