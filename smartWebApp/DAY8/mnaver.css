@@ -1,0 +1,131 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box; 
+    margin: 0;    /*양옆 여백 없애줌*/
+    padding: 0;
+}
+
+.top{
+	 height: 143px;  
+	 position: relative;
+}
+.logo-img{
+	display: block;/* 로고 이미지 크기를 조절을 위해 */
+  background-image: url('https://s.pstatic.net/static/www/img/2018/sp_search.svg');
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.input-box{
+	background-color: white;
+	height:609px;
+	width: 36px
+
+}
+.search-box{
+	background-color: #00ab33;
+	height: 142px;
+	padding: 15px 25px;
+}
+.lg_a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.bottom{
+	padding-top: 10px;
+	background-color: rgb(242,242,242);
+	height: 446px;  /* padiing 10 + box6크기 (261 + 165) */
+}
+.bottom-in{
+	position: relative;
+}
+
+.contents{
+	width: 33.3%;
+	background-color: white;  /*높이, 내용이 없기때문에 적용이 안됨*/
+	position: absolute;
+}
+
+#box1{
+		height: 246px;  /*position이 absolute 로 위치 지정하기 때문에 margin 필요없음.*/
+		top: 0;
+		left: 0;
+	}
+		  
+#box2{
+	height: 75px; /*이미지일 경우 높이가 고정 아님. 이미지 크기에 따라 높이 변경됨*/
+	top: 0;
+	left: calc(100% / 3);
+}
+#box3{
+	height: 155px;
+	left: calc(100% - 33.3%);
+	top: 0;
+}
+#box4{
+	left: 0;
+	height: 60px;
+  top: 256px;  /*box1 크기 + 간격10px */
+	
+}
+#box5{
+	height: 86px;  /*box2 크기 + 간격10px */
+	left: calc(100% / 3);
+	top: 85px;
+}
+#box6{
+	height:261px; 	
+	left: calc(100% - 33.3%);
+	top: 165px;  /*box3 크기 + 간격10px */
+}
+#box7{
+	height: 259px;
+	left: 0;
+	top:326px;  /*box4 top 60 +box4 256 크기+ 간격10px */
+}
+
+
+@media (max-width:1024px){   /* 1025 부터는 3개 */
+   .contents{
+		 width: calc(99.95% / 2);          /* (100 - 0.05)/2 */
+	 }
+	 #box1, #box3, #box5, #box7{
+     left: 0;
+	 }
+	 #box2, #box4, #box6{
+		 left: calc(100% - 99.95% / 2);  /*이미 위에서 top:0 이 적용됨*/
+	 }
+	 #box3{
+		 top: 256px;  /*box1의 길이 +간격 10px*/
+	 }
+	 #box4{
+		 top: 85px; /*box2의 길이 +간격 10px*/
+	 }
+	 #box5{
+		top: 421px; /*box3 top + box3 길이 +간격 10px*/
+	 }
+	 #box6{
+		top: 155px; /*box4 top + box4 길이 +간격 10px*/
+	}
+ 	#box7{
+		top: 517px; /*box5 top + box5 길이 +간격 10px*/
+	}
+	.bottom {
+		height: calc(517px + 259px + 10px + 10px) ;   
+		/*가장 마지막에 있는 박스의 top + 가장 마지막에 있는 박스의 길이 + 간격 10px + padding 10*/
+	}
+}
+
+@media (max-width: 640px){   
+	.contents{
+		width: 100%;          
+		position: static; /*이전에 left, top에 준값을 무시하고 순서대로 나타내줌*/
+		margin-bottom: 10px;
+	}
+}
