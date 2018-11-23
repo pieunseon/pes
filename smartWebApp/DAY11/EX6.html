@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	 <input type="text" id="id">
+	 <br>
+	 <input type="text" id="pw" onchange="change(this)">
+	 <br>
+	 <input type="text" id="repw">
+
+	 <script> // property방식
+	 var idObj = document.getElementById('id');
+	 idObj.onchange = function(){
+		 console.log(this.value);
+	 } 
+	 function change(obj){
+		 console.log(obj.value);
+	 }
+	 function change2(){
+		 var text = this.value; // this 함수를 호출하는 객체 
+		 console.log(text);
+		 this.style.color ='red';  
+		 this.style.backgroundColor = 'yellow'
+	 }
+	 var input3 = document.getElementById('repw');
+	 if(input3.addEventListener){
+		input3.addEventListener('change',change2);
+		 } else if(input3.attachEvent){
+			input3.attachEvent('onchange',change2);
+		 } 
+		 var arr = [400,400,300,7];
+		 console.log(arr);
+		 arr.sort(function(a,b){    //음수,양수의 크기로 정렬하는 함수 . 값을 비교하는 기준점준다. 
+     return a-b;   //b-a로 하면 양수부터 출력됨
+		 });
+		 console.log(arr);
+
+	 </script>
+</body>
+</html>

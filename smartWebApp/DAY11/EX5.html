@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<!--기본 document.getElementById예제-->
+	<!--
+	<input type="text" id="inputId">
+	<button onclick="alertMessage()">클릭</button>
+	<script>
+		function alertMessage(){
+			//입력창에 있는 텍스트를 가져오는 함수 
+			var input = document.getElementById('inputId').value;
+			alert(input);
+		}
+	</script>-->
+	<script>
+  function ex(){
+
+	
+	var str = "123";
+	var num = 123;
+	// == 은 자료형에 상관없이 값이 일치할때,
+	if(num == str) //!=
+	console.log('문자열 : ', str, '과 숫자', num, '은 같습니다.');
+	else
+	console.log('문자열 : ', str, '과 숫자', num, '은 다릅니다.');
+	
+	//===은 자료형도 일치하고 값도 일치할때
+	if(num === str) //!==
+	console.log('문자열 : ', str, '과 숫자', num, '은 완전히 같습니다.');
+	// else
+	console.log('문자열 : ', str, '과 숫자', num, '은 완전히 같지 않습니다.');
+	}
+	</script>
+<!--기본 document.getElementById예제 : 비밀번호 확인예제-->
+	<input type="password" id="Pw">
+	<input type="password" id="Repw">
+	<button onclick="alertMessage()">비밀번호 확인버튼</button> 
+
+	<br>
+<!--기본 document.createElement예제:상세보기 버튼 누르면  div에 상세내용 출력하는 예제-->
+	<button onclick="showDetail()">상세보기</button>
+	<div id = "detail"></div>
+
+	<script>
+  //문제1)
+	function alertMessage(){
+		
+		var Pw   = document.getElementById('Pw').value;
+		var Repw = document.getElementById('Repw').value;
+		 
+		if(Pw == ""){
+			alert("비밀번호를 입력하세요");
+			return;
+		}
+		if (Pw ==  Repw) {
+			alert	("비밀번호가 같습니다");
+		}
+		else
+	 	alert	("비밀번호가 틀립니다.");
+		}
+
+//문제 2)
+/*기본 document.createElement예제:상세보기 버튼 누르면  div에 상세내용 출력하는 예제 */
+		function showDetail(){
+			var detailNode = document.getElementById('detail');
+			var subDetail = document.createElement('span');
+			var text = document.createTextNode("상세내용은 xxx입니다.");
+
+			subDetail.appendChild(text); //subDetail 과 text을 연결하기 . text가 span안으로 들어감  
+			clear();
+			detailNode.appendChild(subDetail); //span 태그가 div안으로 들어감
+  	}
+
+		function clear(){
+			var detailNode = document.getElementById('detail');
+			var subDetail = document.querySelector('#detail span');
+			console.log(clear);
+
+			if(subDetail != null) //박스안에 자손 span태그가 있으면 가져와서 삭제하기 .누적되지 않게 먼저 들어가 있는 내용 지우기 
+			detailNode.removeChild(subDetail);
+
+		}
+
+	</script>
+
+</body>
+</html>
