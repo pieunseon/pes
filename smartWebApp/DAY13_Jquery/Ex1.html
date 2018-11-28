@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script>  
+	<!--온라인 주소로 가져오기.(min붙이면 압축가능)
+			코드 복사해서 파일 생성해서 사용가능 -->
+	<!--jqeury 공식 홈페이지에서 다운로드 가능
+	    jqeury형식: $로 시작 ()-->
+	<script src="jquery-3.3.1.js"> </script> 
+	<title>Document</title>
+</head>
+<body>
+	 <input type="text" id ="id" value="123" >    <!--value: input창에 실제 초기값을 넣어줌. placeholder랑 다름 -->
+	 <input type="text" class="pw" value="456">
+	 <input type="text" class="pw" value="111">
+	 <button class="btn"> 클릭1</button>
+	 <button class="btn"> 클릭2</button>
+	 <form class="form">
+		 <button>제출</button>
+	 </form>
+	<script>
+		//document(문서)가 다 로딩되고 실행해라 
+		$(document).ready(function(){
+			$('#id').val(); 
+			console.log(id);
+			var pw = $('.pw').val();        //queryselector 랑 같음
+
+			console.log(pw);
+			$('#id').val('789'); 
+			$('.pw').val('7890');           //일괄적으로 셋팅함 . class이름이 pw인 객체들의 value를 7890으로 설정
+		 
+			$('.btn').click(function(){     //클릭이벤트:클래스이름이 btn인 객체들이 클릭되면 fucntion 을 실행 (이름이 없어서 익명함수)
+        console.log('클릭됐습니다.');  //동일한 클래스이면 일괄적으로 같이 동작하게 함
+			});
+			$('.form').submit(function(){
+				console.log('제출실패');
+				return false;	     	       	 
+				//submit 버튼 눌렀을때 제출안되게 함.클레스가 form인 객체가 제출이 되면 일반적으로 form태그 요소를 가져옴
+			});
+			console.log($('#id').css('color'));
+			//color설정하기
+			$('#id').css('color','red');
+			$('#id').css('background-color','yellow');
+		});
+
+		//val :속성(함수). 객체 값을 가져올때 사용. 설정할때는 val(설정값)이용. 
+		//alert(123);   document밖으로 꺼냈을때는 alert이 먼저 출력됨(화면이 구성되지 않았기 때문)
+	
+		</script>
+</body>
+</html>

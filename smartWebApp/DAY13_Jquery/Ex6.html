@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+	<style>
+	/* [순서] 
+	1. 박스중 하나를 클릭하면 동작이 일어나도록 jqeury로 등록
+	2. 클릭한 객체의 클래스를 toggle한다. 
+	 */
+	 
+  div {
+		 width :80px;
+		 height:80px;
+		 line-height:80px;
+		 text-align:center;
+		 font-size :40px;
+		 display: inline-block;
+		 border: 1px solid black;
+	 }
+  .background-red{
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+
+	<script>
+	   $(document).ready(function(){
+      $('div').click(function(){
+				//alert(123);  //모든 div에 aler(123적용)
+			$(this).toggleClass('background-red')
+			  //this는 현재 이벤트가 실행되는 객체 
+		
+		});
+	});
+	</script>
+</body>
+</html>

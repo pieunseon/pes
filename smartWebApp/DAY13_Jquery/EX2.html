@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+	<!--$(document).ready 메소드안에 코드를 구현하면 스크립트 위치에 상관없이 항상 동작을 하게 해줌 
+				메소드밖에 선언을 하면 스크립트 위치에 따라 동작하지 않을 수도 있다. 
+				그래서 가급적이면 $(document).ready 메소드안에 기능들을 구현하는 것이 좋다.필수는 아님-->
+</head>
+<body>
+	
+	<input type="text" id="input1">
+	<p><b>Hello</b></p>
+	<button>클릭</button>
+	<script>  
+
+     $(document).ready(function(){  
+			function test(){
+				$('p').animate({'color':'red', 'font-size':'40px'},"slow");
+				var text = $('p').text();
+				var html = $('p').html();
+				console.log(text);
+				console.log(html);
+				//$('p').text('123');  해당하는 텍스트의 값이 클릭하면 바뀜
+			//	$('p').html('<input type ="text">');  //버튼을 누르면 p태그가 input태그로 바뀜
+      }
+
+
+			$('button').click(test);
+			$('#input1').focus(function(){
+				$(this).css('background-color','yellow');
+			});
+			$('#input1').blur(function(){
+				$(this).css('background-color','rgb(255,255,255)');
+			});
+			$('#input1').mouseenter(function(){
+				$(this).css('background-color','rgb(0,255,0)');
+			});
+			$('#input1').mouseleave(function(){
+				$(this).css('background-color','rgb(#ffffff)');
+
+			});
+		});
+		
+	</script>
+
+	</body>
+</html>

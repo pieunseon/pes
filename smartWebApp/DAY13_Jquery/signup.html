@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<form>
+		<div>
+			아이디
+			<input type="text" placeholder="아이디" name="id" id="id">
+		</div>
+		<div id="boxId1">
+			아이디는 5자 이상 10자이하이다.
+		</div>
+		<div id="boxId2">
+			아이디는 영문,숫자로 이루어져 있으며 영문자로 시작한다.
+		</div>
+		<div>
+			비밀번호
+			<input type="password" placeholder="비밀번호" name="pw" id="pw">
+		</div>
+		<div id="boxId3">
+			비밀번호는 5자 이상 10자이하이다.
+		</div>
+		<div id="boxId4">
+			비밀번호는 영문과 숫자가 한개 이상씩 포함되어야 한다.
+		</div>
+		<div>
+			비밀번호확인
+			<input type="password" placeholder="비밀번호확인" name="repw" id="repw">
+		</div>
+		<div id="boxId5">
+			비밀번호와 비밀번호 확인이 일치하지 않습니다.
+		</div>
+		<button>회원가입</button>
+	</form>
+
+	<script>
+
+		$(document).ready(function () {
+			$('#id').change(checkid);
+			$('#pw').change(checkpw);
+			$('#repw').change(checkrepw);
+			$('form').submit(check);
+
+			//html 태그에 있는 id = "id"인 객체안에  onchange="checkid"를 지우고 추가하여 동일한 동작을 하도록함
+
+			function checkVaildation(regex, text) {
+				if (regex.test(text))
+					return true;
+				  return false;
+			}
+
+			function checkid() {
+
+				var regex = /^[A-z][A-z0-9]{4,9}$/;
+				var id = $('#id').val();
+
+				clearBox('#boxId1');
+				clearBox('#boxId2');
+				if (id.length < 5 || id.length > 10) {
+					showBox("#boxId1");
+					return false;
+				}
+
+				if (!checkValidation(regex, id)) {
+					showBox("#boxId2");
+					console.log('아이디 유효성 실패');
+
+					return false;
+				}
+				return true;
+			}
+
+			function checkpw() {
+
+				var pw = $('#pw').val();
+				var regex = /^\w*([A-z]\d|\d[A-z])\w*$/;
+
+				clearBox('#boxId3');
+				clearBox('#boxId4');
+				if (pw.length < 8 || pw.length > 20) {
+					showBox("#boxId3");
+					return false;
+				}
+
+				if (!checkValidation(regex, id)) {
+					showBox("#boxId4");
+					console.log('비밀번호 유효성 실패');
+
+					return false;
+				}
+				return true;
+			}
+
+			function checkrepw() {
+				var repw = $('#repw').val();
+				var pw = $('#pw').val();
+				clearBox('#boxId5');
+				if (pw != repw) {
+					showBox("#boxId5");
+					return false;
+				}
+				return true;
+			}
+
+
+			function clearBox(selector) {
+				var element = $(selector);
+				if (element != null)
+					element.css('display', 'none');
+			}
+
+			function clear() {
+				clearBox('#boxId1');
+				clearBox('#boxId2');
+				clearBox('#boxId3');
+				clearBox('#boxId4');
+				clearBox('#boxId5');
+			}
+
+
+			function check() {   //회원가입의 onclick지우기 
+				var isSubmit = true;
+
+				if (!checkid())
+					isSubmit = false;
+
+				if (!checkpw())
+					isSubmit = false;
+
+				if (!checkrepw())
+					isSubmit = false;
+
+				return isSubmit;
+			}
+
+			function showBox(selector) {
+				var element = $(selector);
+				if (element != null)
+					element.css('display', 'block');
+			}
+			clear();
+		});		
+	</script>
+</body>
+
+</html>
