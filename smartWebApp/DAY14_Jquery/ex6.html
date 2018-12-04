@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="ex6.css">
+	
+	<style>
+			.display-none	{
+				display:none;
+			}
+	</style>
+</head>
+<body>
+	<!--메뉴1,메뉴2,메뉴3을 가지는 네비게이션을 가지는 네비게이션을 생성하고,
+		가로의 길이가 640px 이하가 되면 반응형이 되서 메뉴1,메뉴2, 메뉴3을 없애고 햄버거 메뉴 보여줌-->
+		<nav>
+			<ul id="menu">
+				<li>메뉴1</li>
+				<li>메뉴2</li>
+				<li>메뉴3</li>
+			</ul>
+			<ul id="ham">
+				<li><i class="fas fa-bars"></i></li>
+			</ul>
+				<ul id="sub-menu">
+						<li>메뉴1</li>
+						<li>메뉴2</li>
+						<li>메뉴3</li>
+				</ul>
+		</nav>
+		1
+		<script>
+			$('#ham').click(function(){
+			$('#sub-menu').toggleClass('display-block');
+		});
+
+		//resize함수 :
+		
+		$(window).resize(function(){
+		 console.log('test');
+		 console.log($(document).width());
+		 
+		 if($(window).width()>640){
+			$('#sub-menu').removeClass('display-block');
+		 }
+		}); 
+  	</script>
+</body>
+</html>

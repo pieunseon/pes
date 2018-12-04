@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<title>Document</title>
+</head>
+<body>
+	<p class="text">안녕하세요. 제 이름은 <span>홍길동입니다.</span></p>
+	<p >안녕하세요. 제 이름은 <span>임꺽정</span>입니다.</p>
+	<script>
+	 $(document).ready(function(){
+
+		 //방법1)
+		 var obj1 = $('p').filter('.text').text();  //p태그의 text라는 클래스의 text()를 가져온다.
+		 //방법2)
+		 var obj2 = $('p.text').text();
+		 //방법3)
+		 var obj3 = $('p').not('.text').text();  //p태그의 text라는 클래스가 아닌 것을 가져오기
+		 //임꺽정에는 text라는 클래스 없기 때문에 
+
+		console.log(obj1);
+		console.log(obj2);
+		console.log(obj3);
+	 });
+
+	</script>
+</body>
+</html>

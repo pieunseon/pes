@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+nav{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	background-color:grey;
+}
+
+ul{
+	list-style: none;
+}
+li{
+	display: inline-block;
+	margin-left:15px;  /*글씨 간격 조정*/ 
+	cursor: pointer;
+}
+#ham{
+	display: none;
+}
+#sub-menu{
+	width: 100px;
+	display: none;  /*클릭전까진 안보이게*/
+	position: absolute;
+	background-color: white;
+}
+
+#sub-menu>li{
+	margin: 0;
+	padding-left:15px; 
+	display: block;
+}
+
+/*sub-menu의 display가 충돌하기 때문에 */
+
+#sub-menu.display-block,
+.display-block{
+	display: block;
+}
+
+@media(max-width: 640px){
+    #menu{
+			display: none;
+		}
+    #ham{
+		 display: block;
+	 }
+}
+
