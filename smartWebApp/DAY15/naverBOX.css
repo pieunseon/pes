@@ -39,7 +39,8 @@ ul,ol{
     margin: 0 auto;
     height: 47px;
     width: 1080px;
-    border-color: blue;
+		border-color: blue;
+		position: relative;
 }
 .bottom{
 		background-color: rgb(242,244,247);
@@ -137,6 +138,12 @@ ul,ol{
 .box5{
     height: 142px;
 }
+.box5-bottom{
+	display: none;
+
+}
+
+
 .box6{
     height: 150px;
 }
@@ -330,9 +337,60 @@ video{
 	top: 0;
 	background-color: white;
 	z-index: 2;
-  display: none;
+	display: none;
+	overflow: hidden;
+	padding: 0 9px 6px 17px;
+	
 }
 
+.real-lank1 {
+ 	  position: relative;
+	  z-index: 1;
+	  background: #fff;
+	  color: #222;
+	  float: left;
+    margin-left: -1px;
+    padding-top: 5px;
+    width: 126px;
+    height: 17px;
+    border: 1px solid #e3e7ee;
+    background: #f9fafc;
+    color: #888;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+		line-height: 14px;
+		width: 126px;
+	  z-index: 5;
+		cursor: pointer;
+		left: 0;		 
+}
+
+
+.real-lank2 {
+ 	  width: 127px;
+	  position: relative;
+    z-index: 1;
+    background: #fff;
+		color: #222;
+		float: left;
+    margin-left: -1px;
+    padding-top: 5px;
+    width: 126px;
+    height: 17px;
+    border: 1px solid #e3e7ee;
+    background: #f9fafc;
+    color: #888;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+		line-height: 14px;
+		z-index: 5;
+		cursor: pointer; 
+		left: 0;
+}
 
 
 .real-num{
@@ -455,6 +513,8 @@ p{
     height: 33px;
     padding: 9px 0 7px 0;
 }
+
+
 .day{
     font-weight: bold;
     line-height: 17px;
@@ -519,7 +579,8 @@ p{
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
-    text-decoration: none;
+		text-decoration: none;
+		display: none;
 }
 .location:hover{
     text-decoration: underline;
@@ -629,6 +690,8 @@ p{
 		height: 200px;
 		position: relative;
 }
+
+
 .box3-item1{
     padding: 13px 0 0 16px;
     position: absolute;
@@ -653,6 +716,22 @@ p{
     line-height: 20px;
     letter-spacing: -1px;
 }
+
+.news-item1{
+		margin: 18px 0;
+		display:block;
+		text-align: center;
+		width: 122px;
+		height: 27px;
+		position: absolute;
+	  right: 0;
+	  top: 0;
+	  background-color: white;
+	  z-index: 2;
+    display: none;
+}
+
+
 .api_list::after,
 .box3-menu::after,
 .box3-item3::after,
@@ -726,6 +805,13 @@ p{
     overflow: hidden;
     font-size: 0;   /*엔터에의한 공백 방지*/
 }
+
+.api_list_item1{
+	display: block;
+	height: 100%;
+	text-align: center;
+}
+
 ul.api_list>li{
     width: 123px;
     height: 67px;
@@ -821,7 +907,7 @@ ul.api_list>li>a{
   top: -47px;
   right: -5px;
   padding-top: 8px;
-  height: 45.8px;                   /*?????????????????*/
+  height: 45.8px;        /*?????????????????*/
 	background: #fff;
 	width: 211px;
 }
@@ -865,12 +951,34 @@ ul.api_list>li>a{
 		background-position: -191px -257px;
 		background-image: url('https://s.pstatic.net/static/www/img/2018/sp_themecast_v180607.png')
 }
+
+ul.api_list>li:hover{
+		 background-color: #f9fafc;
+}
+
+ul.api_list>li>div{
+	display: none;
+	width: 95px;
+	margin: 0 auto;
+	background-color: white;
+	height: 30px;
+}
+
 /*공통클래스*/
 /*같은 클래스 일 경우 뒤에 작성된 클래스가 적용됨*/
 .real-search-box:hover,
-#auto-box.display-block,   
-.sub-menu.display-block,
+#auto-box.display-block,  
+ul.api_list>li>div.display-block,
 .display-block{
 	display: block;
 }
 
+ul.api_list>li>div,
+ul.api_list>li>a.display-none,
+.display-none{
+	display: none;
+}
+
+.display-inline-block{
+	display: inline-block;
+}

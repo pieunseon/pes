@@ -1,8 +1,12 @@
 $(document).ready(function(){  //여러개 있어도 인식함 (on load는 한 개만 인식함)
   $('.auto-search').click(function(){
-		 $('#auto-box').toggleClass('display-block');
+		 $('#auto-box').toggleClass('display-block');   
+		 //1)auto-search를 클릭하면 auto-box보였다가 안보였다가 toggle하기
 		 $('.auto-down').toggleClass('auto-up');
+		 //2)auto-down 아이콘을 클릭하면 auto-up 아이콘으로 바꿔주기 
 	 });
+
+	
 	 $('.item4').click(function(){
 		 $(this).toggleClass('item4-1');
 		 $('.sub-menu').toggleClass('display-block');
@@ -23,6 +27,8 @@ $(document).ready(function(){  //여러개 있어도 인식함 (on load는 한 �
    $('.sub-menu-background').toggleClass('display-block');
 
  }
+
+
 
 /*
  var ticker = function(){
@@ -69,15 +75,82 @@ var ticker = function(div,h,time){
 	   $(this).detach().appendTo(div+'>ul').removeAttr('style');   
 		  });
 		ticker(div,h,time);
-	}, 2000);       
+	}, 2000);       //2000(2초) : 글자 박스가 바뀌는 주기 
 }; 
-ticker('.item5','-20px',400);
+ticker('.item5','-20px',400);   //400(0.4초) :글자가 올라가는 속도
 ticker('.news-content','-20px',600);
   //item5에 마우스hover효과주기 
 	$('.item5').hover(function(){
 		$('.real-search-box').toggleClass('display-block');
 	});
+
+
+
+
+	//뉴스목록 이름 클릭하면 '구독,뉴스 보기'로 아이콘 바뀌기
+	$('.api_list>li').hover(function(){
+		//$('.api_list>li>a').toggleClass('display-none');
+	  $(this).children('a').toggleClass('display-none');   //this 현재 이벤트가 일어나고 있는 객체 
+		//$('.api_list>li>div').toggleClass('display-block');
+		$(this).children('div').toggleClass('display-block');
+	});
+
+
+
+ //box5-bottom의 6개 번호중 선택할 박스 번호 의미
+	var index = 1;
+	function displayBox5(i){                                    // i : 몇번째 박스인지
+	$('.box5-bottom').removeClass('display-block');             //6개를 일단 다 안보이게하고 선택한 i번째 박스만 보이게 =>기조네 보였던 박스를 안보이게 하기 위해
+	$('.box5-bottom').eq(i-1).addClass('display-block');     
+	//eq는 0부터 시작하기 때문에 bottm box를 지우거나 class이름을 다르게해야함
+
+	$('.box5-item2>b').text(i);
+
+	$('.location').removeClass('display-inline-block');             
+	$('.location').eq(i-1).addClass('display-inline-block'); 
+	
+	}
+
+	displayBox5(index+1);
+
+
+	$('.box5-next').click(function(){   //버튼 누를때 마다 숫자가 1개 씩 증가함
+	 index ++;
+	 if(index > 6 ) {       //박스가 6개이기 때문에 7번째로 가려고 하면 첫번째로 보내준다.
+		 index = 1;
+	 }
+	 displayBox5(index);
+	});
+
+	$('.box5-prev').click(function(){   //버튼 누를때 마다 숫자가 1개 씩 감소함
+		index --;
+		if(index <= 0 ) {      
+			index = 6;
+		}
+		displayBox5(index);
+	 });
+
+	
+	$('.search-lank1').click(function(){
+		 index++;
+		 if(index > 1)
+		 index = 0;
+
+		 displayContent(index);
+	});
+
+
+	$('.search-lank2').click(function(){
+		index--;
+		if(index < 0 )
+		index = 1;
+
+		displayContent(index);
+	});
+
+ displayContent(0);
 });
+
 
 
 /*
@@ -88,7 +161,5 @@ ticker('.news-content','-20px',600);
 		
  });
  */
-
- /*실시간 검색어*/
 
 
