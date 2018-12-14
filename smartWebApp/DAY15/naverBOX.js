@@ -29,7 +29,6 @@ $(document).ready(function(){  //여러개 있어도 인식함 (on load는 한 �
  }
 
 
-
 /*
  var ticker = function(){
 	timer = setTimeout(function(){      //특정시간이 지난후 기능이 적용되는 함수
@@ -130,27 +129,55 @@ ticker('.news-content','-20px',600);
 		displayBox5(index);
 	 });
 
-	
-	$('.search-lank1').click(function(){
-		 index++;
-		 if(index > 1)
-		 index = 0;
 
-		 displayContent(index);
+
+ $('.rank-left').click(function(){
+ $('.rank-lists').first().css('display','block');             
+ $('.rank-lists').last().css('display','none');
+ $(this).css('background-color','#f9fafc');
+ $('.rank-right').css('background-color','#ffffff');
+
+
+ });
+
+ $('.rank-right').click(function(){
+	$('.rank-lists').last().css('display','block');
+	$('.rank-lists').first().css('display','none');
+	$(this).css('background-color','#f9fafc');
+  $('.rank-left').css('background-color','#ffffff');
+ 
 	});
 
+ $('.rank-lists').first().css('display','block');
+ $('.rank-lists').last().css('display','none');
 
-	$('.search-lank2').click(function(){
-		index--;
-		if(index < 0 )
-		index = 1;
 
-		displayContent(index);
-	});
+ var selectedMenuCnt = 0;
+ var menuArr = [ "dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"]
+ $('.menu-setting').click(function(){
+	 var cnt = 0;
 
- displayContent(0);
+	$('.item2-1').each(function(){
+		$(this).prop('class','item2-1');
+
+		cnt ++;
+		if(cnt > 5){
+			$(this).addClass('display-none');
+
+		}
+		});
+ });
+
+ $('.menu-close').click(function(){
+	 var i =0;
+	 if(selectedMenuCnt == 0 ){ 
+	$('.item2-1').each(function(){
+		$(this).prop('class','item2-1 back-img');
+		$(this).addClass(menuArr[i++]);                //???????????????
+	});  
+ }
+ });
 });
-
 
 
 /*

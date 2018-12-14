@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 	<link rel="stylesheet" href="naverBox.css">
 	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script>  
-	<script src="naverBOX.js"></script> <!--jquery작업할때는 코드길어지니까 따로 js파일만들어서 작업하기-->
+	<script src="naverBOX.js"></script> 
+	<!--jquery작업할때는 코드길어지니까 따로 js파일만들어서 작업하기-->
 	<title>Document</title>
 </head>
 <body>
@@ -77,17 +78,19 @@
 							<a href="#"><div class="item1-5">	</div></a>
 							<a href="#"><div class="item1-6"></div></a>
 							<a href="#"><div class="item1-7"></div></a>
+						
 						</div>
 						<div class="inline-block item2">
-							<a href="#"><div class="item2-1"></div></a>
-							<a href="#"><div class="item2-2"></div></a>
-							<a href="#"><div class="item2-3"></div></a>
-							<a href="#"><div class="item2-4"></div></a>
-							<a href="#"><div class="item2-5"></div></a>
-							<a href="#"><div class="item2-6"></div></a>
-							<a href="#"><div class="item2-7"></div></a>
-							<a href="#"><div class="item2-8"></div></a>
-							<a href="#"><div class="item2-9"></div></a>
+					
+							<a href="#"><div class="item2-1 back-img  dici"></div></a>
+							<a href="#"><div class="item2-1 back-img  newsi"></div></a>
+							<a href="#"><div class="item2-1 back-img  stocki"></div></a>
+							<a href="#"><div class="item2-1 back-img  dealeri"></div></a>
+							<a href="#"><div class="item2-1 back-img  mapi"></div></a>
+							<a href="#"><div class="item2-1 back-img  moviei"></div></a>
+							<a href="#"><div class="item2-1 back-img  musici"></div></a>
+							<a href="#"><div class="item2-1 back-img  booki"></div></a>
+							<a href="#"><div class="item2-1 back-img  webtooni"></div></a>
 						</div>
 						<div class="inline-block item3"></div>
 						<div class="inline-block item4"></div>
@@ -107,11 +110,22 @@
 									</li>
 							</ul>
 							</div>
-
+       <!--비쥬얼스튜디오코드에서는 단어_단어 : 한 단어로 묶여짐.  단어-단어: 각 단어별로 인식-->
 					</div>  <!--item5에 마우스 hover하면 real-search-box보이게 하기-->
 					  <div class="real-search-box">
-							<a href="#" class="real-lank1" id="low">1~10위</a>
-							<a href="#" class="real-lank2" id="high">11~20위</a>
+							<div class="real-top">급상승 검색어</div>
+							<div class="real-rank">
+								<a href="#" class="rank rank-left">1~10위</a>
+								<a href="#" class="rank rank-right">11~20위</a>
+							</div>   
+									<ul class="rank-lists">
+									<li class="rank-list">1. 오늘의 날씨</li>
+									<li class="rank-list">2. 충청북도 청주시</li>
+								</ul>
+								<ul class="rank-lists">
+										<li class="rank-list">11. 서울특별시</li>
+										<li class="rank-list">12. 대전광역시</li>
+								</ul>
 						</div>
 						<div class="inline-block item6"></div>
 					</div>
@@ -122,6 +136,40 @@
 			<div class="sub-menu-background"></div>
 			<div class="sub-menu">
 				<div class="sub-menu-inner">
+					<div class="sub-menu-inner-add">
+						<ul class="add-item">
+							<li class="add1">
+								<span class="check">
+								<input type="checkbox">
+								</span>	
+								<label for="book">책</label> 
+							</li>
+							<li class="add2">
+									<span class="check">
+									<input type="checkbox">
+									</span>	
+									<label for="music">음악</label> 
+								</li>
+								<li class="add3">
+										<span class="check">
+										<input type="checkbox">
+										</span>	
+										<label for="map">지도</label> 
+									</li>
+									<li class="add4">
+											<span class="check">
+											<input type="checkbox">
+											</span>	
+											<label for="dic">사전</label> 
+										</li>
+										<li class="add5">
+												<span class="check">
+												<input type="checkbox">
+												</span>	
+												<label for="car">자동차</label> 
+											</li>
+					   </div>
+				</ul>
 					<div class="sub-menu-icons">
 							<a href="#" class="all-service">서비스 전체보기</a>
 							<a href="#" class="menu-setting">메뉴 설정</a>
@@ -212,9 +260,9 @@
 										<a href="#">
 											<img src="https://s.pstatic.net/static/newsstand/up/2017/0424/nsd144152433.png" alt="">
 										</a>
-										<div>
-											<a href="#">구독</a>
-											<a href="#">기사보기</a>
+										<div class="api_list_btn">
+											<a href="#" class="subscribe-btn">구독</a>
+											<a href="#" class="read-btn">기사보기</a>
 										</div>
 									</li>
 									<li>

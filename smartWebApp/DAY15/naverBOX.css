@@ -14,7 +14,8 @@ ul,ol{
     list-style: none;          
 }
 .container{
-    min-width: 1100px;
+		min-width: 1100px;
+	/* 	border:solid blue 1px; */
 }
 .nav-top{
     /* height: 170px; */
@@ -45,13 +46,14 @@ ul,ol{
 .bottom{
 		background-color: rgb(242,244,247);
 		position: relative;
-		
+		width: 1100px;
+		margin: 0 auto;
 }
 .bottom-inner{
-    width: 1100px;
+		width:100%;
     margin: 0 auto;
     padding: 8px 10px 0; /* 순서 : 상 우 하 좌 */
-    /* padding: 8px 10px 0 10px; */
+		/* padding: 8px 10px 0 10px; */
 }
 .bottom-wrap{
     font-size: 0;
@@ -209,12 +211,12 @@ video{
 }
 /* item1-1~ item1-7의 display속성을 inline-block으로 바꾸고
 높이를 16px로 설정 */
-.item1>a>div,
-.item2>a>div{
-    display: inline-block;
-    height: 16px;
-    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png');
+.item1>a>div{
+	display: inline-block;
+	height: 16px;
+	background-image: url('https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png');
 }
+
 .item1-1{
     width: 25px;
     background-position: -244px -233px;
@@ -250,54 +252,76 @@ video{
     margin-left: 14px;
     margin-top: -1px;
 }
-
 .item2{
-    width: 366px;
     height: 32px;
     padding: 16px 0 0 14px;
     font-size: 0;
 }
-.item2-1{
+
+.item2-1 {
+	margin-left: 14px;
+	width: 64px;
+	height: 30px;
+	display: block;
+	border: 1px solid black;
+	margin-top: -7px;
+	float: left;
+}
+
+.item2-1::nth-child(){
+	margin-left: 0;
+}
+
+.back-img{
+	border: none;
+	margin-top: 0;
+	display: inline-block;
+	height: 16px;
+	background-image: url('https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png');
+
+}
+.dici{
     width: 26px;
     background-position: 0 -259px;
-    margin-left: 0px;
+		margin-left: 0px;
+		
 }
-.item2-2{
+.newsi{
     width: 28px;
     background-position: -279px -26px;
     margin-left: 14px;
 }
-.item2-3{
+.stocki{
     width: 26px;
     background-position: -108px -259px;
     margin-left: 14px;
 }
-.item2-4{
+.dealeri{
     width: 40px;
     background-position: -152px -156px;
     margin-left: 14px;
 }
-.item2-5{
+.mapi{
     width: 27px;
     background-position: -279px -208px;
     margin-left: 14px;
 }
-.item2-6{
+.moviei{
     width: 27px;
     background-position: -279px -52px;
     margin-left: 14px;
 }
-.item2-7{
+.musici{
     width: 26px;
     background-position: -144px -259px;
     margin-left: 14px;
 }
-.item2-8{
+.booki{
     width: 13px;
     background-position: -140px -78px;
     margin-left: 14px;
 }
-.item2-9{
+.webtooni{
     width: 27px;
     background-position: -279px -78px;
     margin-left: 14px;
@@ -329,9 +353,10 @@ video{
 	line-height: 20px;
 	overflow: hidden;	
 }
+
 .real-search-box{
-	width: 400px;
-	height: 400px;
+	width: 288px;
+	min-height: 332px;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -339,59 +364,52 @@ video{
 	z-index: 2;
 	display: none;
 	overflow: hidden;
-	padding: 0 9px 6px 17px;
-	
+	border: 1px solid #bec8d8;
 }
 
-.real-lank1 {
- 	  position: relative;
-	  z-index: 1;
-	  background: #fff;
-	  color: #222;
-	  float: left;
-    margin-left: -1px;
-    padding-top: 5px;
-    width: 126px;
-    height: 17px;
-    border: 1px solid #e3e7ee;
+.real-top{
+	height: 46px;
+	padding: 26px 26px 0;
+
+}
+.real-rank {
+ 	 
+    height: 30px;
+    padding: 0 9px 6px 17px;
+}
+
+
+/*rank클래스 공통사항들*/
+
+.rank {
+	height: 24px;
+	padding-top: 5px;
+	border: 1px solid #e3e7ee;
+	float: left;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #888;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.rank-left{
+	  
+    width: 128px;
+    border-right: 0;
     background: #f9fafc;
-    color: #888;
-    vertical-align: top;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
-		line-height: 14px;
-		width: 126px;
-	  z-index: 5;
-		cursor: pointer;
-		left: 0;		 
+    vertical-align: top;  
 }
 
-
-.real-lank2 {
- 	  width: 127px;
-	  position: relative;
-    z-index: 1;
-    background: #fff;
-		color: #222;
-		float: left;
-    margin-left: -1px;
-    padding-top: 5px;
-    width: 126px;
-    height: 17px;
-    border: 1px solid #e3e7ee;
-    background: #f9fafc;
-    color: #888;
-    vertical-align: top;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
-		line-height: 14px;
-		z-index: 5;
-		cursor: pointer; 
-		left: 0;
+.rank-right{
+  	width: 129px;
 }
 
+.rank-list{
+	height: 22px;
+	padding: 4px 0 0 21px;
+}
 
 .real-num{
     color: #00ab33;
@@ -806,6 +824,23 @@ p{
     font-size: 0;   /*엔터에의한 공백 방지*/
 }
 
+.subscribe-btn,
+.read-btn{
+		margin-right: -5px;
+		padding: 7px 0;
+		width: 34px;
+		height: 14px;
+		border: 1px solid #e3e7ee;
+		background-color: #fff;
+		color: #222;
+		text-decoration: none;
+		letter-spacing: -1px;
+		font-size: 12px;
+		line-height: 14px;
+		cursor: pointer;
+		text-align: center;
+}
+
 .api_list_item1{
 	display: block;
 	height: 100%;
@@ -891,7 +926,7 @@ ul.api_list>li>a{
 	right: 0;           /*자동적으로 width를 full로 잡아줌*/
 	background-color: #000;
 	opacity: 0.3;
-	z-index: 3;         /*sub-menu의 z-index보다 낮게 ??????? z-index 숫자 입력하는 기준??????*/
+	z-index: 3;         
 	display: none;
 }
 .sub-menu-inner{
@@ -902,14 +937,74 @@ ul.api_list>li>a{
 
 }
 
+.sub-menu-inner-add{
+		float: left;
+    padding-left: 16px;
+    width: 137px;
+    height: 292px;
+		border-right: 1px solid #f1f3f6;
+		display: block;
+		text-align: left;
+		font-size: 12px;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+
+.add-item{
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		display: block;
+		padding-top: 4px
+}
+
+
 .sub-menu-icons{
 	position: absolute;
   top: -47px;
-  right: -5px;
+  right: 5px;
   padding-top: 8px;
   height: 45.8px;        /*?????????????????*/
 	background: #fff;
-	width: 211px;
+	width: 230px;
+}
+
+.sub-menu-inner-add{
+		float: left;
+    padding-left: 16px;
+    width: 137px;
+    height: 292px;
+		border-right: 1px solid #f1f3f6;
+		display: block;
+		text-align: left;
+}
+
+.check{
+		display: inline-block;
+		margin-right: 8px;
+		width: 15px;
+		height: 15px;
+		background-position: -28px -62px;
+		vertical-align: -3px;
+		white-space: nowrap;
+		text-align: -webkit-match-parent;
+		font-size: 12px;
+		font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+		background-image: url('https://s.pstatic.net/static/www/img/2018/sp_more_v180627.png');
+		background-repeat: no-repeat;
+		cursor: pointer;
+
+}
+.add1{
+		overflow: hidden;
+    padding-top: 10px;
+    text-overflow: ellipsis;
+		white-space: nowrap;
+		margin: 0;
+		padding: 0;
+		display: list-item;
+		text-align: -webkit-match-parent;
+		font-size: 12px;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 .all-service:visited,
 .all-service{
