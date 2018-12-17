@@ -9,6 +9,9 @@
     font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
+body{
+	background-color: rgb(242,244,247);
+}
 
 ul,ol{
     list-style: none;          
@@ -18,11 +21,13 @@ ul,ol{
 	/* 	border:solid blue 1px; */
 }
 .nav-top{
+	background-color: white;
     /* height: 170px; */
 }
 .nav-bottom{
     border-top: 1px solid rgb(241,243,246);
-    border-bottom: 1px solid rgb(208,216,228);
+		border-bottom: 1px solid rgb(208,216,228);
+		background-color: white;
    
     /*
     border-top: 1px solid black;
@@ -283,8 +288,7 @@ video{
 .dici{
     width: 26px;
     background-position: 0 -259px;
-		margin-left: 0px;
-		
+
 }
 .newsi{
     width: 28px;
@@ -934,20 +938,11 @@ ul.api_list>li>a{
 	width: 1100px;
 	margin: 0 auto;
 	height: 100%;
+	padding:20px 0 15px 0;
 
 }
 
-.sub-menu-inner-add{
-		float: left;
-    padding-left: 16px;
-    width: 137px;
-    height: 292px;
-		border-right: 1px solid #f1f3f6;
-		display: block;
-		text-align: left;
-		font-size: 12px;
-    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
-}
+
 
 .add-item{
 		margin: 0;
@@ -963,9 +958,9 @@ ul.api_list>li>a{
   top: -47px;
   right: 5px;
   padding-top: 8px;
-  height: 45.8px;        /*?????????????????*/
+  height: 45.8px;        
 	background: #fff;
-	width: 230px;
+	width: 240px;
 }
 
 .sub-menu-inner-add{
@@ -1006,24 +1001,26 @@ ul.api_list>li>a{
 		font-size: 12px;
     font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
 }
-.all-service:visited,
 .all-service{
-		float: left;
     width: 98px;
-    height: 28px;
-    border: 1px solid #e3e7ee;
-    background: #fff;
-    color: #444;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 29px;
-}
-.all-service:visited,  /*방문기록을 표시해줌.보라색으로 글씨 색 바뀜*/
+    }
+/*방문기록을 표시해줌.보라색으로 글씨 색 바뀜*/
 .menu-setting{
-		float: left;
-    margin-left: 5px;
-    width: 68px;
+		 width: 68px;
+}
+
+.init{
+	width: 75px;
+}
+
+.ok,.cancel{
+	width: 55px;
+}
+
+.sub-menu-a,
+.sub-menu-a:visited{
+  	float: right;
+	  margin-left: 5px;
     height: 28px;
     border: 1px solid #e3e7ee;
     background: #fff;
@@ -1034,7 +1031,7 @@ ul.api_list>li>a{
     line-height: 29px;
 }
 .menu-close{
-		float: left;
+		float: right;
     margin: 2px 0 0 9px;
     padding: 5px;
     background: #fff;
@@ -1058,6 +1055,16 @@ ul.api_list>li>div{
 	background-color: white;
 	height: 30px;
 }
+
+.sub-menu-div{
+	float: left;
+	height: 292px;
+	width: 156px;
+	padding-left: 16px; 
+	border-left: 1px solid black  /*#f1f3f6*/;
+	border-right: 1px solid black  /*#f1f3f6*/; 
+}
+
 
 /*공통클래스*/
 /*같은 클래스 일 경우 뒤에 작성된 클래스가 적용됨*/

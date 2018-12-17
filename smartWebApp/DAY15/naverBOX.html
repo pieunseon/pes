@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="naverBox.css">
 	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script>  
 	<script src="naverBOX.js"></script> 
+	<script src="subMenu.js"></script>
 	<!--jquery작업할때는 코드길어지니까 따로 js파일만들어서 작업하기-->
 	<title>Document</title>
 </head>
@@ -82,15 +83,15 @@
 						</div>
 						<div class="inline-block item2">
 					
-							<a href="#"><div class="item2-1 back-img  dici"></div></a>
-							<a href="#"><div class="item2-1 back-img  newsi"></div></a>
-							<a href="#"><div class="item2-1 back-img  stocki"></div></a>
-							<a href="#"><div class="item2-1 back-img  dealeri"></div></a>
-							<a href="#"><div class="item2-1 back-img  mapi"></div></a>
-							<a href="#"><div class="item2-1 back-img  moviei"></div></a>
-							<a href="#"><div class="item2-1 back-img  musici"></div></a>
-							<a href="#"><div class="item2-1 back-img  booki"></div></a>
-							<a href="#"><div class="item2-1 back-img  webtooni"></div></a>
+							<a href="#"><div class="item2-1 back-img dici"></div></a>   <!--클래스 이름이 3개 -->
+							<a href="#"><div class="item2-1 back-img newsi"></div></a>
+							<a href="#"><div class="item2-1 back-img stocki"></div></a>
+							<a href="#"><div class="item2-1 back-img dealeri"></div></a>
+							<a href="#"><div class="item2-1 back-img mapi"></div></a>
+							<a href="#"><div class="item2-1 back-img moviei"></div></a>
+							<a href="#"><div class="item2-1 back-img musici"></div></a>
+							<a href="#"><div class="item2-1 back-img booki"></div></a>
+							<a href="#"><div class="item2-1 back-img webtooni"></div></a>
 						</div>
 						<div class="inline-block item3"></div>
 						<div class="inline-block item4"></div>
@@ -118,8 +119,8 @@
 								<a href="#" class="rank rank-left">1~10위</a>
 								<a href="#" class="rank rank-right">11~20위</a>
 							</div>   
-									<ul class="rank-lists">
-									<li class="rank-list">1. 오늘의 날씨</li>
+									<ul class="rank-lists">  <!--$('.rank-lists').first().css('display','block'); -->
+									<li class="rank-list">1. 오늘의 날씨</li> <!--$('.rank-lists').last().css('display','none'); -->
 									<li class="rank-list">2. 충청북도 청주시</li>
 								</ul>
 								<ul class="rank-lists">
@@ -136,47 +137,43 @@
 			<div class="sub-menu-background"></div>
 			<div class="sub-menu">
 				<div class="sub-menu-inner">
-					<div class="sub-menu-inner-add">
-						<ul class="add-item">
-							<li class="add1">
-								<span class="check">
-								<input type="checkbox">
-								</span>	
-								<label for="book">책</label> 
-							</li>
-							<li class="add2">
-									<span class="check">
-									<input type="checkbox">
-									</span>	
-									<label for="music">음악</label> 
-								</li>
-								<li class="add3">
-										<span class="check">
-										<input type="checkbox">
-										</span>	
-										<label for="map">지도</label> 
-									</li>
-									<li class="add4">
-											<span class="check">
-											<input type="checkbox">
-											</span>	
-											<label for="dic">사전</label> 
-										</li>
-										<li class="add5">
-												<span class="check">
-												<input type="checkbox">
-												</span>	
-												<label for="car">자동차</label> 
-											</li>
-					   </div>
-				</ul>
 					<div class="sub-menu-icons">
-							<a href="#" class="all-service">서비스 전체보기</a>
-							<a href="#" class="menu-setting">메뉴 설정</a>
 							<a href="#" class="menu-close">
-								<span class="exit"></span>
-							</a>
+							<span></span>
+						</a>
+							<a href="#" class="sub-menu-a menu-setting">메뉴 설정</a>
+							<a href="#" class="sub-menu-a all-service">서비스 전체보기</a>
+							<a href="#" class="sub-menu-a cancel display-none">취소</a>
+							<a href="#" class="sub-menu-a ok display-none">확인</a>
+							<a href="#" class="sub-menu-a init display-none">초기화</a>
+						</div>
+					<div class="sub-menu-div">
+					<div>
+						<input type="checkbox" id="dic" value="dici" class="display-none"> <!--dici값을 가져와서 클래스에 적용-->
+						<label for="dic">사전</label>
 					</div>
+					<div>
+							<input type="checkbox" id="news" value="newsi"  class="display-none">
+							<label for="news">뉴스</label>	
+					</div>
+					<div>
+							<input type="checkbox" id="stock" value="stocki"  class="display-none">
+							<label for="stock">주식</label>	
+					</div>
+					<div>
+							<input type="checkbox" id="dealer" value="dealeri"  class="display-none">
+							<label for="dealer">부동산</label>	
+					</div>
+					<div>
+							<input type="checkbox" id="map" value="mapi"  class="display-none">
+							<label for="map">지도</label>	
+					</div>
+					<div>
+							<input type="checkbox" id="movie" value="moviei"  class="display-none">
+							<label for="movie">영화</label>	
+						</div>			
+					</div>
+					<div class="sub-menu-div"></div>
 				</div>
 			</div>
 			<div class="bottom-inner">
