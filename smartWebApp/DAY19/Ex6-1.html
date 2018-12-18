@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script> 
 	<title>Document</title>
-
 	<style>
 
 *{
@@ -23,8 +22,7 @@ div{
 	line-height: 90px;
  }
 
-
- .checked{
+.checked{
 	 background-color: orange;
  }
 
@@ -60,13 +58,14 @@ div{
 				//선택한 박스를 다시 선택했을때
 				else {  //선택한 값을 배열에서 제거 
 					
-					//arr.splice(arr.indexOf(value));과 동일  
+				 
 					arr.splice(arr.indexOf(value),1);   //배열에 1,2,3 있고 1이 있을때 찾아서 1개를 없앤다. 
-					console.log(arr);
-					//arr.splice(arr.indexOf(value));과 동일  
+
+				
 					$(this).removeClass('checked');
 
 				}    
+				console.log(arr);
 		});
 });
 	</script>
