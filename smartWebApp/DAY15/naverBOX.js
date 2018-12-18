@@ -139,17 +139,17 @@ ticker('.news-content','-20px',600);
  $('.rank-lists').last().css('display','none');
 
 
- var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"];
+ var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"];   //기본 제공 메뉴
   $('.menu-setting').click(function(){
-		createCheck();
+		createCheck();  //initCheck와 반대. 
 		var cnt = 0;
 		
-    $('.item2-1').each(function(){ // each함수로인해 item2-1클래스가 9개 이기때문에 9번실행
-			console.log('cnt : '+cnt);
-			if(menuArr2.length <= cnt){
+    $('.item2-1').each(function(){  // each함수로인해 item2-1클래스가 9개 이기때문에 9번실행
+			console.log('cnt : '+cnt);    //사용자 설정에서 선택되지 않은 메뉴들을 빈박스로 만든다.???????????
+			if(menuArr2.length <= cnt){   //선택되지 않은 메뉴들 
 				console.log('번호 : '+cnt);
         $(this).prop('class','item2-1');
-        if(cnt > 4){
+        if(cnt > 4){      //5개가 넘으면 안보여줌 (0,1,2,3,4 -> 5개)
           $(this).addClass('display-none');
         }
 			}else{
@@ -169,51 +169,42 @@ ticker('.news-content','-20px',600);
   $('.init').removeClass('display-none');
   $('.cancel').removeClass('display-none');
 });
-$('.cancel').click(function(){
+$('.cancel').click(function(){   //아예 닫는게 아니라 처음으로 돌아감
 	initCheck();
 	checkMenu();
-	selectedMenu = menuArr2.slice();
+	subDetailMenu(0);
+	selectedMenu = menuArr2.slice(); //메뉴내용을 이어서 가지고 있음)
   $('.all-service').removeClass('display-none');
   $('.menu-setting').removeClass('display-none');
   $('.ok').addClass('display-none');
   $('.init').addClass('display-none');
 	$('.cancel').addClass('display-none');
-	
-  var i = 0;
-  if(menuArr2.length == 0){
-    $('.item2-1').each(function(){
-      $(this).prop('class','item2-1 back-img');
-      $(this).addClass(menuArr[i++]);
-    });
-  }else{
-		$('.item2-1').each(function(){
-			if(menuArr2.length > i){
-			$(this).prop('class','item2-1 back-img');
-			$(this).addClass(menuArr2[i++]);
-			}else{
-				$(this).prop('class','item2-1 display-none');
-			}
-		});
-	}
+	displayMenu();
+
   $('.sub-menu-div input[type=checkbox]').each(function(){
     $(this).addClass('display-none');
-  });
+	});
+	//subDetailMenu 함수는 더보기 버튼 클릭시 오른쪽 상단 보이는 메뉴를 결정하는 함수로 0이면 서비스 전체보기 , 메뉴 설정이 보이고  
+	//1이면 초기화,확인, 취소 가 보인다.
+	subDetailMenu(0);
 });
+
 $('.menu-close').click(function(){
-	selectedMenu = [];
-	checkMenu();
+	selectedMenu = [];  //선택된 값들을 비워줌
+	checkMenu();        //배열에 값에 맞게 배열을 결정해 줌 
   menu();
 	closeSubMenu();
 	initCheck();
 });
-$('.item4').click(function(){
+$('.item4').click(function(){ //더보기 버튼 
 	//접기 또는 더보기 버튼을 클릭하면 메뉴에 있는 배열을 임시 배열에 저장한다. 
-	selectedMenu = menuArr2.slice();
-	menu();
-	closeSubMenu();
-	initCheck();
-	checkMenu();
-	displayMenu();
+	//접기버튼을 눌렀을 때 확인을 거치지 않은 선택된 메뉴들을 제거하는 작업
+	selectedMenu = menuArr2.slice();   //사용자 메뉴의 배열에서 값을 가져옴 
+	menu();             // 더보기 버튼을 접기 버튼으로 바꾼다. (toggle)
+  closeSubMenu();  
+	initCheck();        //체크박스가 없는 라벨을 클릭시 아무 동작을 하지 않도록 하는 기능 
+	checkMenu();       //선택된 사용자 메뉴(저장된 메뉴값)의 값을 이용하여 체크박스의 체크 여부 결정
+	displayMenu();    //없어도 됨 (close-menu 에 이미 들어가 있기때문에 동일하게 작동됨)
 });
   /* 메뉴 설정에서 선택한 메뉴들을 저장하는 배열 */
   var selectedMenu = [];
@@ -237,14 +228,16 @@ $('.item4').click(function(){
     }
     // 체크박스의 value가 배열에 있으면 배열에서 해당 문자열을 제거
     else{
-      selectedMenu.splice(isContain,1);
-    }
+      selectedMenu.splice(isContain,1);  
+		}
+		
+
     // 배열에 있는 문자열을 input창에 하나씩 뿌려줌 
     var cnt = 0;
-    $('.item2-1').each(function(){
+    $('.item2-1').each(function(){    //총 9개
       if(cnt < selectedMenu.length){
         $(this).prop('class','item2-1 back-img');
-        $(this).addClass(selectedMenu[cnt++]);
+        $(this).addClass(selectedMenu[cnt++]);    //???????????????????????
       }
       else{
         $(this).prop('class','item2-1');
@@ -253,24 +246,46 @@ $('.item4').click(function(){
         cnt++;
       }
     });
-  });
+	});
+	
+
 $('.ok').click(function(){
-	// 선택된메뉴들을 menuArr2에다가 저장
-	initCheck();
+	// 선택된메뉴들을 menuArr2에다가 저장(업데이트)
+	initCheck();  
   menuArr2 = selectedMenu.slice();
-  menu();
-	closeSubMenu();
+  menu();   //메뉴를 닫아줌?
+	closeSubMenu(); 
 	checkMenu();
 });
 
+
+//없어도 되긴됨...
+function subDetailMenu(toggle){
+	if(toggle == 0){
+		('.all-service').removeClass('display-none');
+		('.menu-setting').removeClass('display-none');
+		('.ok').addClass('display-none');
+		('.init').addClass('display-none');
+		('.cancel').addClass('display-none');
+  } else{
+		('.all-service').addClass('display-none');
+		('.menu-setting').addClass('display-none');
+		('.ok').removeClass('display-none');
+		('.init').removeClass('display-none');
+		('.cancel').removeClass('display-none');
+
+	}
+}
+
 $('.init').click(function(){
-	initCheck();
-	menuArr2 = [];
-	selectedMenu = [];
+	
+	menuArr2 = [];   //기존 사용자 메뉴를 초기화
+	selectedMenu = [];   //선택 된 메뉴를 초기화
 	alert('초기설정으로 돌아갑니다.');
-	menu();
-	closeSubMenu();
-	checkMenu();
+	menu();               //셋트 
+	closeSubMenu();      //셋트
+	initCheck();        //셋트
+	checkMenu();       //체크 여부를 결정 
  });
  
 
@@ -284,7 +299,7 @@ function menu(){
     $('.sub-menu-div input[type="checkbox"]').each(function(){
 			$(this).prop('checked','');
       for(var i = 0; i<menuArr2.length; i++){
-        if($(this).val() == menuArr2[i]){
+        if($(this).val() == menuArr2[i]){   //사용자가 선택해서 확인된 메뉴들과 비교 
           $(this).prop('checked','checked');
         }
       }
@@ -292,8 +307,8 @@ function menu(){
   }
 
   function closeSubMenu(){
-    displayMenu();
-    $('.sub-menu-div input[type=checkbox]').each(function(){
+    displayMenu();    //사용자가 선택한 메뉴 또는 기본 메뉴를 출력하는 기능 
+    $('.sub-menu-div input[type=checkbox]').each(function(){      //더보기 버튼 클릭시 체크박스가 안보이도록 해주는 기능 
       $(this).addClass('display-none');
     });
     $('.all-service').removeClass('display-none');
@@ -312,13 +327,14 @@ function createCheck(){
 	var i = 0;
 	var checkbox =$('.sub-menu-div input[type =checkbox]');
 	$('.sub-menu-div label').each(function(){
-		$(this).prop('for',checkbox.eq(i++).prop('id'));
+		$(this).prop('for',checkbox.eq(i++).prop('id'));    //for를 만들어줌?????????????????????????????
 	})
 }
 
-function displayMenu(){     //displauy가 세번 사용되서 따로 함수로 빼냄 
+function displayMenu(){     //display가 세번 사용되서 따로 함수로 빼냄 
 	
 var i = 0;
+
 
 //메뉴 선택이 안된 경우 
 	if(menuArr2.length == 0){
