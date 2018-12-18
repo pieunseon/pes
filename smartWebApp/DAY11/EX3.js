@@ -13,6 +13,7 @@ function printSum(){
 		var num = parseInt(strNum);
 		// sum에 정수를 누적
 		
+	
 		sum += num;
 	}
 	alert(sum);
