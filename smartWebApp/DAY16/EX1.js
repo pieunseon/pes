@@ -59,7 +59,7 @@ $(document).ready(function(){
 		if(input.val() == check.val()){
 			input.val('');
 		} else {
-      input.val(check.val());
+      input.val(check.val()); 
 		} 
 	});
 	
