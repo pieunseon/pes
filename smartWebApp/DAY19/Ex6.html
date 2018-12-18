@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<title>Document</title>
+
+	<style>
+
+*{
+	box-sizing: border-box;
+	}
+
+div{
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	line-height: 90px;
+ }
+
+
+ .checked{
+	 background-color: orange;
+ }
+
+</style>
+</head>
+<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+
+	<script>
+
+	//방법1) length 이용
+	$('div').click(function(){
+     //checked 클래스를 가진 객채의 갯수 
+		 var checkedCnt = $('.checked').length;
+		 //최대 선택 갯수
+		 var maxCnt =3;
+		 //선택된 갯수가 최대 갯수가 아니면 토글을 하고 
+     if(checkedCnt < maxCnt){
+
+      $(this).toggleClass('checked');
+		 }else{
+			 if($(this).prop('class').indexOf('checked') == -1)    //indexOf : 클릭한 객체의 class에 checked 라는 클래스가 없으면
+			 alert('최대 3개까지 선택 할 수 있습니다.');
+			$(this).removeClass('checked');
+			
+		 }
+		 console.log($(this).prop('class').indexOf('checked'));
+	});
+	</script>
+</body>
+</html>

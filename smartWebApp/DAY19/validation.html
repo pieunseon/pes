@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<script src="./js/jquery.validate.min.js"></script>   <!--다운로드한 js폴더안의파일 추가 -->
+	<script src="./js/additional-methods.min.js"></script>
+	<title>플러그인 사용방법(회원가입)</title>
+
+	<style>
+	label.error{       /*안내 메세지만 색 바꾸고 싶을때*/
+		color: red;
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	  <form id="form">      
+			   <!--<label for="id" id="id-error" class="error"></label> 메세지가 입력 창 위에서 출력되게 -->
+        <input type="text" name="id" id="id" placeholder="아이디"/><br>
+        <input type="password" name="password" id="password" placeholder="비밀번호"/><br/>
+        <input type="password" name="repassword" id="repassword" placeholder="비밀번호 확인"/><br/>
+        <input type="text" name="age" id="age" placeholder="나이"/><br/>
+        <input type="text" name="name" id="name" placeholder="이름"/><br/>
+        <input type="text" name="email" id="email" placeholder="이메일"/><br/>
+        <input type="text" name="homepage" id="homepage" placeholder="홈페이지"/><br/>
+        <input type="submit" value="회원가입"/>
+		</form>
+
+		<script>  //따로 함수를 만들지 않아도 되는 장점이 있다. 
+		$(function(){
+    $("#form").validate({           /*"./js/jquery.validate.min.js" 안에 구현되어 있는 함수 */
+       rules: {           
+         id: {
+            required : true,        /*입력 필수항목 */
+            minlength : 4          /* 최소길이 : 4글자 이상 */
+             },
+         password: {
+            required : true,       /*입력 필수항목 */
+            minlength : 8,         /*최소8글자 이상 */
+            regex: /^(?=\w{8,20}$)\w*(\d[A-z]|[A-z]\d)\w*$/     /*영어, 숫자 최소 1개씩 필수 포함 */
+            },
+            repassword: {
+                required : true,
+                minlength : 8,
+                equalTo : password    /* pw와 같은지 비교*/
+            },
+            name: {
+                required : true,
+                minlength : 2
+            },
+            age: {
+                digits : true   /* 숫자만 입력 가능 */
+            },
+            email: {
+                required : true,
+                minlength : 2,
+                email : true   /*email type으로  */
+            },
+            homepage: {
+                url : true //http형식으로 입력해야만 됨
+            }
+				},
+				
+
+        //규칙체크 실패시 출력될 메시지
+        messages : {
+            id: {
+                required : "필수로입력하세요", 
+                minlength : "최소 {0}글자이상이어야 합니다"     // {0} : 위에서 입력한 숫자가 표시됨
+            },
+            password: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                regex : "영문자, 숫자로 이루어져있으며 최소 하나이상 포함"
+            },
+            repassword: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                equalTo : "비밀번호가 일치하지 않습니다."
+            },
+            name: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다"
+            },
+            age: {
+                digits : "숫자만입력하세요"
+            },
+            email: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                email : "메일규칙에 어긋납니다"
+            },
+            homepage: {
+                url : "정상적인 URL이 아닙니다"
+            }
+        }
+    });
+})
+$.validator.addMethod(
+    "regex",
+    function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    },
+    "Please check your input."
+);
+		</script>
+</html>

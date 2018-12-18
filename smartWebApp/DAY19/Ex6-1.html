@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<title>Document</title>
+
+	<style>
+
+*{
+	box-sizing: border-box;
+	}
+
+div{
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	line-height: 90px;
+ }
+
+
+ .checked{
+	 background-color: orange;
+ }
+
+</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+
+	<script>
+//방법2) 배열 이용 : 전역변수 사용
+		$(document).ready(function(){
+			var arr =[];
+			$('div').click(function(){
+				var maxCnt = 3;
+				var value = $(this).text();
+				//선택되어 있지 않은 박스를 선택했을때 
+				if(arr.indexOf(value) == -1 ){             //indexOf(value) == -1   : 배열이 0부터 시작이니까 값이 없을 경우 -1로 표시됨
+					//최대 갯수를 넘어가지 않았을때 
+					if(arr.length < maxCnt){
+						//해당 값을 배열에 추가하고
+						arr.push(value);
+						//배경색을 변경 
+						$(this).addClass('checked');
+					 } else {
+						 alert('최대 3개까지 선택할 수 있습니다.');
+					 }
+				} 
+				//선택한 박스를 다시 선택했을때
+				else {  //선택한 값을 배열에서 제거 
+					
+					//arr.splice(arr.indexOf(value));과 동일  
+					arr.splice(arr.indexOf(value),1);   //배열에 1,2,3 있고 1이 있을때 찾아서 1개를 없앤다. 
+					console.log(arr);
+					//arr.splice(arr.indexOf(value));과 동일  
+					$(this).removeClass('checked');
+
+				}    
+		});
+});
+	</script>
+</body>
+</html>

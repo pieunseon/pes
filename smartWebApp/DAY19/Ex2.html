@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src ="//code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<link rel="stylesheet" href="Ex2.css">
+	<title>Document</title>
+</head>
+<script>
+	/*
+	$('div').hover(function(){
+   $(this).toggleClass('background-color','red');
+	}); */
+
+
+
+/* 방법1)
+	$(document).ready(function(){
+  $('div').hover(function(){
+	 $(this).text('hover예제');
+	},function(){
+		$(this).text('');
+	});
+});
+*/
+
+
+	$(document).ready(function(){
+   $('div').mouseenter(function(){
+				$(this).text('hover 예제');
+			});
+
+   	$('div').mouseleave(function(){
+				$(this).text('hover 예제');
+
+			});
+	});  
+
+</script>
+<body>
+	 <div class="box">
+		 <p>안녕하세요</p>
+	 </div>
+</body>
+</html>
