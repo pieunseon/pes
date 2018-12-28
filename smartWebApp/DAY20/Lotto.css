@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+
+*{
+    box-sizing: border-box;
+}
+
+.box,
+#reset,
+#confirm{
+    border:1px solid black;
+    outline: none;         /*input은 기본으로 아웃라인이 잡히기 때문에 없앰*/
+    width: 80px;
+    height: 80px;
+    line-height: 76px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#input{
+    width: 700px;
+    margin: 0 auto;    /*6개의 박스 가운데로 */
+}
+
+#boxes{
+    margin-top: 10px;
+}
+
+.selected{
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
