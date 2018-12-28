@@ -7,38 +7,29 @@
  */
 
 $(document).ready(function(){
-	//css속성 display를 none으로 만듦
-  $('#btn1').click(function(){
-		var display =$('p').css('display');  
+	//css()를 이용하여 display를 none으로 만듬
+	$('#btn1').click(function(){
+		var display = $('p').css('display');
 		if(display == 'block')
-		$('p').css('display','none');    //display라는 속성을 none으로 바꿔라.
+			$('p').css('display','none');
 		else
-		$('p').css('display','block');
+			$('p').css('display','block');
 	});
-
-  //addClass를 이용하여 클래스를 등록
+	//addClass()를 이용하여 클래스를 등록
 	$('#btn2').click(function(){
-	//$('p').toggleClass('display-none');
+		//$('p').toggleClass('display-none');
 		var className = $('p').attr('class');
 		console.log(className);
-		//indexOf는 문자열에 매개변수 문자열이 있는지 없는지 알려주는 함수로 있으면 해당 매개변수 문자열의
-		//첫 글자가 있는 위치를 알려주고 없으면 -1을 알려준다.
-		if(className == undefined || className.indexOf('display-none') < 0 )   //0부터 시작하기 때문 
-		$('p').addClass('display-none');
+		//indexOf는 문자열에 매개변수 문자열이 있는지 없는지 알려주는 함수로
+		//있으면 매개변수 문자열의 첫글자가 있는 위치를 알려주고 없으면
+		//-1을 알려준다.
+		if(className == undefined || className.indexOf('display-none') < 0 )
+			$('p').addClass('display-none');
 		else
-		$('p').removeClass('display','none');
+			$('p').removeClass('display-none');
 	});
-
-	/*
-	$('#btn2').click(function(){
-		$('p').css('display-none');
-		});
-	*/
-
 	//hide()를 이용하여 해당 객체를 숨김
-			$('#btn3').click(function(){
-			$('p').toggle();
+	$('#btn3').click(function(){
+		$('p').toggle();
 	});
-
-
-});
+}); 
