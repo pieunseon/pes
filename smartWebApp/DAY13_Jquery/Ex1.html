@@ -24,16 +24,18 @@
 	<script>
 		//document(문서)가 다 로딩되고 실행해라 
 		$(document).ready(function(){
-			$('#id').val(); 
-			console.log(id);
-			var pw = $('.pw').val();        //queryselector 랑 같음
 
+			var id = $('#id').val();
+			console.log(id);
+			var pw = $('.pw').val();
 			console.log(pw);
+
+
 			$('#id').val('789'); 
 			$('.pw').val('7890');           //일괄적으로 셋팅함 . class이름이 pw인 객체들의 value를 7890으로 설정
 		 
 			$('.btn').click(function(){     //클릭이벤트:클래스이름이 btn인 객체들이 클릭되면 fucntion 을 실행 (이름이 없어서 익명함수)
-        console.log('클릭됐습니다.');  //동일한 클래스이면 일괄적으로 같이 동작하게 함
+              console.log('클릭됐습니다.');  //동일한 클래스이면 일괄적으로 같이 동작하게 함
 			});
 			$('.form').submit(function(){
 				console.log('제출실패');
