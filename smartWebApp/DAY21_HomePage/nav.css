@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+body{
+    margin: 0;
+}
+nav{
+    height: 40px;
+    line-height: 38px;
+    font-size: 35px;
+    text-align: center;
+}
+
+nav::after{  
+    content: '';
+    clear: both;
+    display: block;      
+}
+.nav-title{
+    text-align: center;
+}
+
+.ham-menu{
+    float: right; 
+    cursor: pointer;
+    font-size: 50px; 
+    color: white;
+    margin-right: 15px;
+}
+
+.sidebar{
+    position: absolute;  
+    background-color: white;
+    top: 0;
+    bottom: 0;  
+    right: -200px;   
+    width: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 2;
+}
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.back{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 40px;
+    /*text-align: center;*/
+    display:inline-block;
+    
+}
+
+.font-black{
+    color: black;
+}

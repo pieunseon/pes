@@ -1,0 +1,55 @@
+@charset 'utf-8';
+
+
+nav::after{  
+    content: '';
+    clear: both;
+    display: block;   /*content: ''; clear: both;  display: block;   float 사용시 부모의 높이가 0이 되는 것을 막아줌*/
+}
+
+p{
+    font-size: 40px;
+    opacity: 0;
+    animation-name: open;
+    animation-duration: 2s;
+    animation-iteration-count: none;
+    animation-timing-function: ease-in;
+    animation-fill-mode :forwards;   /*애니메이션 효과 끝나고 난 상태 유지. backwords:처음 상태로 되돌아감*/
+    height: 200px;
+    padding: 15px;
+    width: 50%;
+    overflow: auto;
+}
+p::-webkit-scrollbar{    /* 크롬기준으로 적용: 스크롤바 육안으로 안보이게 하기 */
+    display: none;
+}
+
+
+.ham-menu{
+    float: right;   /*메뉴 오른쪽으로 정렬*/
+    cursor: pointer;
+    font-size: 50px;   /*메뉴 아이콘 크기 기우기 */
+}
+
+.sidebar{
+    position: absolute;   /*position absolute 사용할 경우 top , bottom 기준점을 지정해줘야 함*/
+    top: 0;
+    bottom: 0;   /*height가 잡힘*/
+    right: -200px;   /* 화면을 기준으로 -200만큼 이동하기 때문에 실제로는 있지만 보이지 않음(display:none은 처음부터 안보이게)*/
+    width: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+
+}
+
+@keyframes open{
+    from{ opacity: 0;}
+    to{opacity: 1;}
+}

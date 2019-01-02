@@ -1,0 +1,51 @@
+@charset 'utf-8';
+
+
+*{         /*body 태그에는 기본으로 margine이 들어가 있기 때문에 0으로 지정해줌 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /*상황에 맞게 사용하기*/
+
+}
+
+.back{ 
+    height: 100%; /*position absolute로 안하면 height 0 으로 잡힘*/
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;     /* cover: 이미지 비율이 유지됨. 새로를 기준으로 비율을 맞춰줌/ contain: 이미지 비율이 유지됨. 해당이미지 전체가 화면안에 다 들어가도록*/
+    background-position: 50% 50%;
+    animation-name:  back;   /*애니메이션 이름 지정*/
+    animation-duration: 6s;    /*지속 시간*/
+    animation-iteration-count: infinite;  /*반복횟수 : 애니메이션 효과 무한으로 반복하기*/
+    animation-timing-function: ease-in-out; /*자연스럽게 효과주기*/
+    opacity: 0.4;  /*투명도*/
+}
+.animation{
+    font-size: 40px;
+}   
+
+body{
+    background-color: black;
+}
+
+
+/*배경화면 색에 animation 효과 주기 */
+@keyframes ani{
+
+    0% {color: black;}  /*시작과 끝의 색(이미지)을 같게헤서 자연스럽게 색 바꾸기 */
+    25% {color: red;}
+    50% {color: blue;}
+    75% {color:  green;}
+    100%{color: black;}
+}
+
+ /*이미지 주소 복사해서 사용시 브라우저에서 사진 화질 확인하기 */
+@keyframes back{  /*0%와 100%의 이미지를 같게 해야 자연스럽게 바뀜*/
+   
+
+    0% {background-image: url('https://i.imgur.com/2fEn8bF.jpg');}
+    50% {background-image: url('http://i.imgur.com/m0JVc4f.png');}
+    100% {background-image: url('https://i.imgur.com/2fEn8bF.jpg');}
+} 
