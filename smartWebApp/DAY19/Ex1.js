@@ -36,7 +36,7 @@ $(document).ready(function(){
 	$('.choice').click(function(){
 	$('input[type=checkbox]').prop('checked',$(this).prop('checked'));  
 
-	//모든 checkbox의 class가 choice인 checkbox의 checked 속성 값으로 설정한다. (this:class or id )
+	//class가 choice인  모든 checkbox를 checked 속성 값으로 설정한다. (this:class or id )
 
 /*
 	방법4) 
