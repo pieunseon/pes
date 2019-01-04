@@ -2,6 +2,7 @@
 
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 nav{
     height: 40px;
@@ -50,7 +51,7 @@ nav::after{
     top:0;
     left: 0;
     width: 40px;
-    /*text-align: center;*/
+    text-align: center;      /*?????????????*/
     display:inline-block;
     
 }

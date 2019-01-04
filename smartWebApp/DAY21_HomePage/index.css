@@ -23,8 +23,6 @@ body{
 }
 
 
-
-
 .contents{
  width: 80%;
  margin: 0 auto;
@@ -80,11 +78,10 @@ body{
 }
 
 @keyframes back{  
-
-    0% {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI4JvlgJo63I0X6SzIrsjwGJKQElwLtvbCwM4iYMjEeI0i33TOIg');}
-    50% {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqC6ocwlTapRWj-goSl-wHdXs3hGgC9aiBdYvgWLY-ctunenzO');}
-    100% {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI4JvlgJo63I0X6SzIrsjwGJKQElwLtvbCwM4iYMjEeI0i33TOIg');}
-} 
+    0% {background-image: url('https://i.imgur.com/2fEn8bF.jpg');}
+    50% {background-image: url('http://i.imgur.com/m0JVc4f.png');}
+    100% {background-image: url('https://i.imgur.com/2fEn8bF.jpg');}
+}
 
 @keyframes open{
     from{ opacity: 0;}
