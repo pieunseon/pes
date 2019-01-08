@@ -134,7 +134,7 @@ $(document).ready(function(){
 
     $('#reset').click(function(){
         arr  = new Array();
-        $('.selected').removeClass('selected');
+        $('.selected').Class('selected');
         answer = randomArr();
         console.log(answer);    //새 게임 누르면 새로 주어지는 컴퓨터 숫자 
          alert('새 게임을 시작합니다');
