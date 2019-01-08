@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자식 윈도우</title>
+</head>
+<body>
+    자식창<br>
+    <input type="text" id="divData" readonly><br>
+        <!--부모쪽에서 버튼을 누르면 id가 divData인 곳에다가 정보가 나타나도록함.
+        input타입으로 해야 value값 받아올 수 있음-->
+
+    <input type="text" id="inputData">
+    <button id="btnOk" onclick="sendData()">확인</button>
+
+    <script> //자바스크립트 코드 이용해서 자식창 값을 부모창으로 넘겨주기
+        function sendData(){
+            opener.document.getElementById('input').value   //opner: 부모찾아서 데이터 전송하기 
+            = document.getElementById('inputData').value;
+            window.close();  //확인 버튼 누르면 정보 보낸 후에 윈도우 창 종료
+        }
+    </script>
+</body>
+</html>

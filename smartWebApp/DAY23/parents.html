@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>부모 윈도우</title>
+</head>
+<body>
+    <button id="btnChild">자식창 열기</button><br>   <!--버튼 누르면 새로운 브라우져 열리기(예:아이디 중복검사시 새로운 브라우저 열림)-->
+    <input type="text" id="input">
+    <button id="btnData">데이터 전달</button><br>
+    <br>
+    <br>
+    가로<input type="text" id="width"><br>
+    세로<input type="text" id="height">
+    <button id="winSize">확인</button>
+
+    <script>
+         var childWin;  //전역으로 선언 (안에서 선언하면 지역변수가 되어 한번 실행된 후 사라지므로 정보 저장해서 유지 시키기 위해)
+        $('#btnChild').click(function(){
+         childWin = window.open('child.html','child','width=400,height=500');   // 윈도우창 크기 지정>>자식창의 특징
+        }); //->새롭게 열리는 자식 윈도우 객체 정보를 넘겨준다
+        
+        $('#btnData').click(function(){    //버튼 누르면 자식 팝업창 안으로 정보가 들어가도록
+            console.log( document.getElementById('input').value);   
+         childWin.document.getElementById('divData').value   //id가 divData 를 찾아서 
+         = document.getElementById('input').value;          //input 값으로 넘기기 
+        
+         });
+
+
+          //부모 창 확인 버튼 누르면 input창에 입력받은 가로,세로 크기 대로 자식창 나타나게 함 
+          $('#winSize').click(function(){
+            var w = $('#width').val();
+            var h = $('#height').val();
+            //inpu창에 입력받은 가로, 세로의 값으로 새로운 자식 창 띄우기 
+
+            //min, max 이용해서 창의 최소 , 최대값 지정하기 
+            
+            var minW = 400;
+            var minH = 400;
+            var maxW = 1000;
+            var maxH = 1000;
+
+            if(w == "" || parseInt(w) <minW )
+            w = minW;
+            else if(parseInt(w) > maxW)
+            w =maxW;
+
+           if(h =="" || parseInt(h) < minH)
+            h = minH;
+            else if(parseInt(h) > maxH)
+            h = maxH;
+            childWin = window.open('child.html','child','width='+w+',height='+h);   
+            // -> 문자열에 원하는 값 (변수로 지정)넣어서 가져오기 , 문자열 표기 방법 주의 
+         });
+    </script>
+</body>
+</html>

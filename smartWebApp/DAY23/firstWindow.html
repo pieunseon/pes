@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>firstwindow</title>
+</head>
+<body>
+        
+    <input type="text" id="data1" name="data1">
+    <button name="data1">Data1</button><br>
+    <br>
+    <input type="text" id="data2" name="data2">
+    <button name="data2">Data2</button><br>
+    <input type="hidden" id="getId">  <!--값이 입력되는지 확인후에 hidden으로 바꾸기 -->
+
+    <script>
+      
+        $('button').click(function(){  
+            $('#getId').val($(this).prop('name'));  
+            window.open('secondWindow.html','child','width=400','height=500');
+        });
+        
+    </script>
+</body>
+</html>
