@@ -17,14 +17,19 @@
     background-size: cover;     /* cover: 이미지 비율이 유지됨. 새로를 기준으로 비율을 맞춰줌/ contain: 이미지 비율이 유지됨. 해당이미지 전체가 화면안에 다 들어가도록*/
     background-position: 50% 50%;
     animation-name:  back;   /*애니메이션 이름 지정*/
+    background-image: url('https://i.imgur.com/2fEn8bF.jpg');  /*keyframes에 이미지 주소 들어가므로 없어도 됨*/
     animation-duration: 6s;    /*지속 시간*/
     animation-iteration-count: infinite;  /*반복횟수 : 애니메이션 효과 무한으로 반복하기*/
     animation-timing-function: ease-in-out; /*자연스럽게 효과주기*/
-    opacity: 0.4;  /*투명도*/
+    opacity: 0.4;  /*투명도:
+    body{
+        background-color: black;
+    }>>없을경우에 1로 .  있을경우 0.4로 조절해줌*/
 }
 .animation{
     font-size: 40px;
 }   
+
 
 body{
     background-color: black;
@@ -40,6 +45,7 @@ body{
     75% {color:  green;}
     100%{color: black;}
 }
+
 
  /*이미지 주소 복사해서 사용시 브라우저에서 사진 화질 확인하기 */
 @keyframes back{  /*0%와 100%의 이미지를 같게 해야 자연스럽게 바뀜*/

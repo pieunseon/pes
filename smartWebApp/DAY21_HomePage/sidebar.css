@@ -32,7 +32,7 @@ p::-webkit-scrollbar{    /* 크롬기준으로 적용: 스크롤바 육안으로
 }
 
 .sidebar{
-    position: absolute;   /*position absolute 사용할 경우 top , bottom 기준점을 지정해줘야 함*/
+    position: absolute;   /*position absolute 사용할 경우 top,bottom 기준점을 지정해줘야 함*/
     top: 0;
     bottom: 0;   /*height가 잡힘*/
     right: -200px;   /* 화면을 기준으로 -200만큼 이동하기 때문에 실제로는 있지만 보이지 않음(display:none은 처음부터 안보이게)*/
@@ -46,7 +46,6 @@ p::-webkit-scrollbar{    /* 크롬기준으로 적용: 스크롤바 육안으로
     font-size: 35px;
     float: right;
     cursor: pointer;
-
 }
 
 @keyframes open{
