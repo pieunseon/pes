@@ -51,11 +51,10 @@ nav::after{
     top:0;
     left: 0;
     width: 40px;
-    text-align: center;      /*?????????????*/
-    display:inline-block;
+	display:inline-block;
     
 }
 
-.font-black{
+.font-black{    
     color: black;
 }
