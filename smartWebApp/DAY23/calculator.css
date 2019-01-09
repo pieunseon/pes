@@ -1,14 +1,28 @@
 @charset 'utf-8';
 
 
-input{
+.div-input{
     box-sizing: border-box;
     width: 320px;  /*80px x 4 =320*/
     height: 100px;
     border: 1px solid black;
-    text-align: right;
+}
+
+#dataStr{
+    font-size: 18px;
+    margin-top: 10px;
+}
+#dataNum{
     font-size: 35px;
 }
+
+input{
+    width: 315px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
 .div-row{
    display: flex;    /*div사이에 자동으로 불필요한 공백을 없애줌 */
 }
@@ -22,4 +36,13 @@ input{
     line-height: 78px;
     text-align: center;
     cursor: pointer;
+    background-color: white;
+}
+
+.div-btn:hover{
+    background-color: bisque;
+}
+
+.div-btn:active{  
+    background-color: gray;
 }
