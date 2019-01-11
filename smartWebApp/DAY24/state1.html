@@ -11,10 +11,8 @@
         국가<input type="text" id="data1" name="data1" readonly>
         <button name="data1">조회</button>
         <input type="hidden" id="getId">  
-
         <script>
-        
-          $('button').click(function(){  
+        $('button').click(function(){  
             $('#getId').val($(this).prop('name'));  
             window.open('state2.html','child','width=400,height=400');
         });
