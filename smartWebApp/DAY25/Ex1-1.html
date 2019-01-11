@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>second</title>
+</head>
+<body>
+        <input type="text" id="fruit" class="fruit">
+        <button id="btn">조회</button><br>
+        <input type="text" id="country" class="country">
+        <button id="btnDiv">확인</button>
+
+        <script>
+        $(document).ready(function(){
+          var win; 
+          var win2;
+         $('#btn').click(function(){  
+            win = window.open('Ex1.html','child','width=500,height=500');
+        });
+
+        $('#btnDiv').click(function(){  
+            win2 = window.open('Ex1-2.html','child','width=500,height=500');
+        });
+
+        /*
+        $('#fruit').change(function(){               //포커스가 해제되면 이벤트 발생
+            setTimeout(function(){              
+            win.close();
+            },1000);
+        }); */
+
+    });
+    </script>
+</body>
+</html>

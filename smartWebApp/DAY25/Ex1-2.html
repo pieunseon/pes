@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h3>좋아하는 나라는?</h3>
+    <div id="inputBox"></div>
+    <button id="btnOk">확인</button>
+    <script>
+        $(document).ready(function(){
+            var oriData = $(opener.document).find('#country').val();
+            //split: 문자열에서 , 를 기준으로 문자열을 잘라 배열로 만드는 함수
+            var arrData =  oriData.split(',');
+            var str="";
+            for(var i =0; i<arrData.length; i++){
+                str += '<input type="text" value="'+ arrData[i] + '"readonly><br>'
+                console.log('<input type="text" value="'+ arrData[i] + '"readonly><br>')
+            }
+            $('#inputBox').html(str);//id가 inputbox인  div box에 input태그들을 넣기위해 html 함수를 사용 
+        });
+    </script>
+</body>
+</html>
